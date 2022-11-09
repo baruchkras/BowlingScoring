@@ -11,6 +11,7 @@ namespace Scoring
         {
             while (true)
             {
+                Console.WriteLine("");
                 Console.WriteLine("Game started");
                 Console.WriteLine("To roll the ball enter number 0 - 10, to display score so far enter 's', to leave enter 'x'");
                 IGame game = new Game();
@@ -49,7 +50,7 @@ namespace Scoring
                         }
                     }
                 }
-                Console.WriteLine("The game completed. The final score is:");
+                Console.WriteLine("The game completed.");
                 gameOutputter.DisplayScore();
                 Console.WriteLine("Play another? Enter 'y' or any other key to exit");
                 if (Console.ReadKey().KeyChar != 'y')
