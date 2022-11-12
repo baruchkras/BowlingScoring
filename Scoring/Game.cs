@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Scoring
 {
-    internal class Game : IGame
+    public class Game : IGame
     {
         public bool IsCompleted { get
             {

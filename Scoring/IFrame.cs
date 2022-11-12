@@ -2,7 +2,7 @@
 
 namespace Scoring
 {
-    internal interface IFrame
+    public interface IFrame
     {
         bool IsCompleted { get; }
         bool IsStrike { get; }

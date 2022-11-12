@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Scoring
 {
-    internal class Frame : IFrame
+    public class Frame : IFrame
     {
         public virtual bool IsCompleted 
         { 
@@ -70,9 +70,17 @@ namespace Scoring
 
         protected virtual void Validate(int rollScore)
         {
-            if (rollScore < 0 || rollScore > 10 || (rolls.Count == 1 && (rolls[0] + rollScore > 10)))
+            if (rollScore < 0)
             {
-                throw new System.ArgumentException();
+                throw new System.ArgumentException(ErrorMessages.RollScoreIsLessThan0);
+            }
+            else if (rollScore > 10)
+            {
+                throw new System.ArgumentException(ErrorMessages.RollScoreIsMoreThan10);
+            }
+            else if (Rolls.Count == 1 && (rolls.Sum() + rollScore > 10))
+            {
+                throw new System.ArgumentException(ErrorMessages.SumOfRollScoresIsMoreThan10);
             }
         }
     }
